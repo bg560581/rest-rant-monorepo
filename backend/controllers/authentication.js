@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
     let user = await User.findOne({
         where: { email:req.body.email }
     })
+    console.log(req.body)
 
     if (!user || !await bcrypt.compare(req.body.password, user.passwordDigest)) {
         res.status(404).json({

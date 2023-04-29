@@ -14,9 +14,4 @@ router.post('/', async (req, res) => {
 })
 
 
-router.get('/', async (req, res) => {
-    const users = await User.findAll()
-    res.json(users)
-})
-
 module.exports = router
